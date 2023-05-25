@@ -46,9 +46,6 @@ const GiveCargoToCustomer = () => {
       const result = await request.get('/branch/getMyBranchCargosByTc/' + tc);
       if (result.data.success) {
         setCargos(result.data.data);
-        if (result.data.data.length === 0) {
-          alert('Kargo bulunamadı');
-        }
       }
     } catch (error) {
       alert(error.response?.data?.error?.message);
